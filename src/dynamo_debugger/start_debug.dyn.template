@@ -1,0 +1,92 @@
+{
+  "Uuid": "f7aa2585-28d5-4935-b372-a4d6a038fded",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "start_debug",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import sys\r\nfrom pathlib import Path\r\n\r\nimport debugpy\r\n\r\npython_exe = Path(sys.base_prefix) / \"python.exe\"\r\nassert python_exe.exists()\r\n\r\nTIMEOUT = 5  # seconds\r\n\r\ndebugpy.configure(python=str(python_exe))\r\ndebugpy.listen(5678)",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "e9d7d298e3bde23e13ccfe74de0dec87",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    }
+  ],
+  "Connectors": [],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.16.4.10216",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -24.378146275363154,
+      "EyeY": 32.9276617474264,
+      "EyeZ": -87.551030373080891,
+      "LookX": 24.378146275363154,
+      "LookY": -32.9276617474264,
+      "LookZ": 87.551030373080891,
+      "UpX": 0.19260796904563904,
+      "UpY": 0.9286034107208252,
+      "UpZ": -0.31717196106910706
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Start Debug",
+        "ShowGeometry": false,
+        "Id": "e9d7d298e3bde23e13ccfe74de0dec87",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 0.0,
+        "Y": 0.0
+      }
+    ],
+    "Annotations": [],
+    "X": 478.00989147152745,
+    "Y": 357.93836125325493,
+    "Zoom": 1.2777169841077241
+  }
+}

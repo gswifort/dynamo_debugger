@@ -1,0 +1,7 @@
+import runpy
+
+temp_python_node_path = r"{temp_python_node_path}"
+
+res = runpy.run_path(temp_python_node_path, init_globals={"IN": IN})
+
+OUT = res.get("OUT", None)

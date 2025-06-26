@@ -1,0 +1,243 @@
+{
+  "Uuid": "f7aa2585-28d5-4935-b372-a4d6a038fded",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "demo",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double,double",
+      "Id": "2a16bfae5fa84bd3b7bab04f06d363fc",
+      "Inputs": [
+        {
+          "Id": "50dd75bbbea3442a90ad4b48648af319",
+          "Name": "x",
+          "Description": "X coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e253cfb30ff34bc58cfbe6827c84eec7",
+          "Name": "y",
+          "Description": "Y coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "12e79f790f4c4a1bb2f39f45667064f0",
+          "Name": "z",
+          "Description": "Z coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "225692e6fd124105bfabf476d1b5e7e4",
+          "Name": "Point",
+          "Description": "Point created by coordinates",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Form a Point given 3 cartesian coordinates\n\nPoint.ByCoordinates (x: double = 0, y: double = 0, z: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1;\n2;\n3;",
+      "Id": "8f0c3dddfa6a43298aa45e32d834cf0e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "80c2d5c59e8c4632be8a975e5ac2bcae",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cdaff3a60e854516b9d43b52848608c2",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "088ea1fc8fcb4c97937e6ac94cd2412b",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "point = IN[0]\r\npoint.X = 10.0\r\nprint(point)\r\nOUT = point",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "7dcf640cf9eb4c9498ce5f3fa71affd0",
+      "Inputs": [
+        {
+          "Id": "a20dd20f84e247fa83df3a872c3a2b5b",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0fa01fd31b0f46a9a3766e0965e3ed28",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "225692e6fd124105bfabf476d1b5e7e4",
+      "End": "a20dd20f84e247fa83df3a872c3a2b5b",
+      "Id": "5474929d08764e64a148beab8c1c8abb",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "80c2d5c59e8c4632be8a975e5ac2bcae",
+      "End": "50dd75bbbea3442a90ad4b48648af319",
+      "Id": "924625c58ce44fca97668d77e55f0f14",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "cdaff3a60e854516b9d43b52848608c2",
+      "End": "e253cfb30ff34bc58cfbe6827c84eec7",
+      "Id": "e8d500aebfaa46d3b2c39a35e2e5276b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "088ea1fc8fcb4c97937e6ac94cd2412b",
+      "End": "12e79f790f4c4a1bb2f39f45667064f0",
+      "Id": "bde34933e63d4d858c4a6e29263a0b98",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.16.4.10216",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Point.ByCoordinates",
+        "ShowGeometry": true,
+        "Id": "2a16bfae5fa84bd3b7bab04f06d363fc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 555.0,
+        "Y": 512.0
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "8f0c3dddfa6a43298aa45e32d834cf0e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 324.0,
+        "Y": 530.0
+      },
+      {
+        "Name": "demo python node",
+        "ShowGeometry": true,
+        "Id": "7dcf640cf9eb4c9498ce5f3fa71affd0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 856.0,
+        "Y": 534.0
+      }
+    ],
+    "Annotations": [],
+    "X": -152.0,
+    "Y": 20.0,
+    "Zoom": 1.0
+  }
+}
